@@ -1,0 +1,20 @@
+[gd_scene load_steps=5 format=3 uid="uid://b2lsc5wkglaag"]
+
+[ext_resource type="Script" path="res://main.gd" id="1_fuyka"]
+[ext_resource type="PackedScene" uid="uid://b85o2lekt7s7g" path="res://player/player.tscn" id="1_phtwg"]
+[ext_resource type="PackedScene" uid="uid://bdaddyirk65h8" path="res://enemy/skeleton.tscn" id="3_gkokv"]
+[ext_resource type="PackedScene" uid="uid://brtbf4jbtrk4c" path="res://enemy/slime.tscn" id="4_qwbqg"]
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_fuyka")
+
+[node name="Player" parent="." instance=ExtResource("1_phtwg")]
+position = Vector2(256, 384)
+
+[node name="EnemyGroup" type="Node" parent="."]
+
+[node name="Skeleton" parent="EnemyGroup" instance=ExtResource("3_gkokv")]
+position = Vector2(832, 256)
+
+[node name="Slime" parent="EnemyGroup" instance=ExtResource("4_qwbqg")]
+position = Vector2(832, 512)
